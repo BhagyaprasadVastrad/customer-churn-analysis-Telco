@@ -1,23 +1,23 @@
-# 📊 Telco Customer Churn Analysis – SQL & Power BI
+# Telco Customer Churn Analysis – SQL & Power BI
 
 ---
 
-## ✅ Project Overview
+## Project Overview
 
 This project analyses **Telco customer churn data** to identify key drivers of churn and recommend actionable strategies to improve retention rates.
 
 ---
 
-## 🛠️ Tools & Technologies Used
+## Tools & Technologies Used
 
 * **MySQL Workbench:** Data cleaning, transformation, and feature engineering
 * **Power BI Desktop:** Data modelling, DAX measures, interactive dashboard creation
 
 ---
 
-## 📝 Data Preparation in MySQL Workbench
+##  Data Preparation in MySQL Workbench
 
-### 🔷 Key SQL Queries:
+### Key SQL Queries:
 
 * **Remove missing TotalCharges values:**
 
@@ -46,9 +46,9 @@ END AS tenure_group
 
 ---
 
-## 📈 Power BI Data Analysis & Visualisation
+##  Power BI Data Analysis & Visualisation
 
-### 🔷 Key DAX Measures:
+###  Key DAX Measures:
 
 * **Total Customers**
 
@@ -94,7 +94,7 @@ Total Monthly Revenue = SUM(telcodata_cleaned[MonthlyCharges])
 
 ---
 
-## 💡 Business Insights & Recommendations
+## Business Insights & Recommendations
 
 ### **Problem**
 
@@ -114,9 +114,9 @@ High churn (\~19.2%) affecting revenue stability.
 
 ---
 
-## ⭐ Project Outcome (STAR Method)
+## Project Outcome (STAR Method)
 
-| 🔷            | **Explanation**                                                                                                                                         |
+|              | **Explanation**                                                                                                                                         |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Situation** | Telco faced high customer churn impacting profits.                                                                                                      |
 | **Task**      | Analyse churn data to identify patterns and recommend strategies.                                                                                       |
@@ -125,7 +125,7 @@ High churn (\~19.2%) affecting revenue stability.
 
 ---
 
-### 📌 **Connect with Me**
+###  **Connect with Me**
 
 If you found this project insightful, feel free to connect on [LinkedIn](https://www.linkedin.com/in/bhagyaprasad-vastrad-a652b6201/).
 
