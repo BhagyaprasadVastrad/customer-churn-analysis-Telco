@@ -82,7 +82,7 @@ Total Monthly Revenue = SUM(telcodata_cleaned[MonthlyCharges])
 
 ---
 
-## 📊 Key Dashboard Visuals:
+##  Key Dashboard Visuals:
 
 * **KPI Cards:** Total Customers, Total Churned, Churn Rate %, Average Monthly Charges, Total Monthly Revenue
 * **Bar Chart:** Customer Count by Contract Type
@@ -133,5 +133,5 @@ If you found this project insightful, feel free to connect on [LinkedIn](https:/
 
 ---
 
-✅ **End of README.** 
+**End of README.** 
 ---
