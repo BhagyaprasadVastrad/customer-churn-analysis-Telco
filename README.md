@@ -15,7 +15,7 @@ This project analyses **Telco customer churn data** to identify key drivers of c
 
 ## Data Preparation in MySQL Workbench
 
-### Key SQL Queries:
+#### Key SQL Queries:
 
 - **Remove missing TotalCharges values:**
   ```sql
@@ -33,7 +33,7 @@ This project analyses **Telco customer churn data** to identify key drivers of c
 END AS tenure_group
 
 
-### Power BI Data Analysis & Visualisation 
+## Power BI Data Analysis & Visualisation 
 
 #### Key DAX Measures:
 
@@ -48,7 +48,7 @@ END AS tenure_group
 **Total Monthly Revenue** = SUM(telcodata_cleaned[MonthlyCharges])
 
 
-### Key Dashboard Visuals:
+## Key Dashboard Visuals:
 
 KPI Cards: Total Customers, Total Churned, Churn Rate %, Average Monthly Charges, Total Monthly Revenue
 
@@ -64,7 +64,7 @@ Line Chart: Average Monthly Charges by Tenure Group
 
 Slicers: Gender, Contract Type, Payment Method, Senior Citizen, Internet Service Type
 
-### Business Insights & Recommendations
+## Business Insights & Recommendations
 
 **Problem** : High churn (~19.2%) affecting revenue stability.
 
