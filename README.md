@@ -1,29 +1,40 @@
-# Telco Customer Churn Analysis – SQL & Power BI
+# 📊 Telco Customer Churn Analysis – SQL & Power BI
 
-## Project Overview
+---
+
+## ✅ Project Overview
 
 This project analyses **Telco customer churn data** to identify key drivers of churn and recommend actionable strategies to improve retention rates.
 
 ---
 
-## Tools & Technologies Used
+## 🛠️ Tools & Technologies Used
 
-- **MySQL Workbench:** Data cleaning, transformation, and feature engineering
-- **Power BI Desktop:** Data modelling, DAX measures, interactive dashboard creation
+* **MySQL Workbench:** Data cleaning, transformation, and feature engineering
+* **Power BI Desktop:** Data modelling, DAX measures, interactive dashboard creation
 
 ---
 
-## Data Preparation in MySQL Workbench
+## 📝 Data Preparation in MySQL Workbench
 
-#### Key SQL Queries:
+### 🔷 Key SQL Queries:
 
-- **Remove missing TotalCharges values:**
-  ```sql
-  UPDATE telcodata SET TotalCharges = NULL WHERE TRIM(TotalCharges) = '';
+* **Remove missing TotalCharges values:**
 
-  CASE WHEN SeniorCitizen = 1 THEN 'Yes' ELSE 'No' END AS SeniorCitizenCategory
+```sql
+UPDATE telcodata SET TotalCharges = NULL WHERE TRIM(TotalCharges) = '';
+```
 
-  CASE
+* **Convert SeniorCitizen from numerical to categorical:**
+
+```sql
+CASE WHEN SeniorCitizen = 1 THEN 'Yes' ELSE 'No' END AS SeniorCitizenCategory
+```
+
+* **Create tenure groups:**
+
+```sql
+CASE
   WHEN tenure BETWEEN 0 AND 12 THEN '0-12 months'
   WHEN tenure BETWEEN 13 AND 24 THEN '13-24 months'
   WHEN tenure BETWEEN 25 AND 36 THEN '25-36 months'
@@ -31,75 +42,96 @@ This project analyses **Telco customer churn data** to identify key drivers of c
   WHEN tenure BETWEEN 49 AND 60 THEN '49-60 months'
   ELSE '60+ months'
 END AS tenure_group
+```
 
+---
 
-## Power BI Data Analysis & Visualisation 
+## 📈 Power BI Data Analysis & Visualisation
 
-#### Key DAX Measures:
+### 🔷 Key DAX Measures:
 
-'''
-**Total Customers** = COUNTROWS(telcodata_cleaned)
+* **Total Customers**
 
-**Total Churned** = CALCULATE(COUNTROWS(telcodata_cleaned), telcodata_cleaned[Churn] = "Yes")
+```DAX
+Total Customers = COUNTROWS(telcodata_cleaned)
+```
 
-**Churn Rate %** = DIVIDE([Total Churned], [Total Customers], 0)
+* **Total Churned**
 
-**Average Monthly Charges** = AVERAGE(telcodata_cleaned[MonthlyCharges])
+```DAX
+Total Churned = CALCULATE(COUNTROWS(telcodata_cleaned), telcodata_cleaned[Churn] = "Yes")
+```
 
-**Total Monthly Revenue** = SUM(telcodata_cleaned[MonthlyCharges]) '''
+* **Churn Rate %**
 
+```DAX
+Churn Rate % = DIVIDE([Total Churned], [Total Customers], 0)
+```
 
-## Key Dashboard Visuals:
+* **Average Monthly Charges**
 
-KPI Cards: Total Customers, Total Churned, Churn Rate %, Average Monthly Charges, Total Monthly Revenue
+```DAX
+Average Monthly Charges = AVERAGE(telcodata_cleaned[MonthlyCharges])
+```
 
-Bar Chart: Customer Count by Contract Type
+* **Total Monthly Revenue**
 
-Column Chart: Customer Count by Tenure Group
+```DAX
+Total Monthly Revenue = SUM(telcodata_cleaned[MonthlyCharges])
+```
 
-Stacked Bar Chart: Customer Churn by Gender
+---
 
-Donut Chart: Gender Distribution
+## 📊 Key Dashboard Visuals:
 
-Line Chart: Average Monthly Charges by Tenure Group
+* **KPI Cards:** Total Customers, Total Churned, Churn Rate %, Average Monthly Charges, Total Monthly Revenue
+* **Bar Chart:** Customer Count by Contract Type
+* **Column Chart:** Customer Count by Tenure Group
+* **Stacked Bar Chart:** Customer Churn by Gender
+* **Donut Chart:** Gender Distribution
+* **Line Chart:** Average Monthly Charges by Tenure Group
+* **Slicers:** Gender, Contract Type, Payment Method, Senior Citizen, Internet Service Type
 
-Slicers: Gender, Contract Type, Payment Method, Senior Citizen, Internet Service Type
+---
 
-## Business Insights & Recommendations
+## 💡 Business Insights & Recommendations
 
-**Problem** : High churn (~19.2%) affecting revenue stability.
+### **Problem**
 
-**Findings**:
+High churn (\~19.2%) affecting revenue stability.
 
-Month-to-month contracts have the highest churn.
+### **Findings**
 
-Customers with 0-12 months tenure show greater churn risk.
+* Month-to-month contracts have the highest churn.
+* Customers with **0-12 months tenure** show greater churn risk.
+* Gender distribution is balanced, suggesting focus on **contract strategies and tenure-based campaigns** rather than gender.
 
-Gender distribution is balanced, suggesting focus on contract strategies and tenure-based campaigns rather than gender.
+### **Recommendations**
 
-**Recommendations:**
+* Promote **annual/two-year contracts** with loyalty discounts.
+* Implement targeted **onboarding and retention campaigns** for first-year customers.
+* Enhance **billing/payment experiences** for better customer satisfaction.
 
-Promote annual/two-year contracts with loyalty discounts.
+---
 
-Implement targeted onboarding and retention campaigns for first-year customers.
+## ⭐ Project Outcome (STAR Method)
 
-Enhance billing/payment experiences for better customer satisfaction.
+| 🔷            | **Explanation**                                                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Situation** | Telco faced high customer churn impacting profits.                                                                                                      |
+| **Task**      | Analyse churn data to identify patterns and recommend strategies.                                                                                       |
+| **Action**    | Cleaned and engineered data in MySQL, created DAX measures in Power BI, built an interactive dashboard with KPIs and visuals.                           |
+| **Result**    | Delivered insights to reduce churn by focusing on contract strategies and tenure-based engagement, demonstrating end-to-end data analysis capabilities. |
 
-**Project Outcome**
+---
 
-**Explanation**
+### 📌 **Connect with Me**
 
-Situation	Telco faced high customer churn impacting profits.
-Task Analyse churn data to identify patterns and recommend strategies.
-Action	Cleaned and engineered data in MySQL, created DAX measures in Power BI, built an interactive dashboard with KPIs and visuals.
-Result	Delivered insights to reduce churn by focusing on contract strategies and tenure-based engagement, demonstrating end-to-end data analysis capabilities.
+If you found this project insightful, feel free to connect on [LinkedIn](https://www.linkedin.com/in/bhagyaprasad-vastrad-a652b6201/).
 
+\#DataAnalytics #PowerBI #SQL #DAX #DataAnalystPortfolio #BusinessIntelligence #ChurnAnalysis #ProjectShowcase #LearningJourney
 
+---
 
-
-
-
-
-
-
-  
+✅ **End of README.** 
+---
