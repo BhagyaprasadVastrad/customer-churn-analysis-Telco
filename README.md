@@ -37,6 +37,7 @@ END AS tenure_group
 
 #### Key DAX Measures:
 
+'''
 **Total Customers** = COUNTROWS(telcodata_cleaned)
 
 **Total Churned** = CALCULATE(COUNTROWS(telcodata_cleaned), telcodata_cleaned[Churn] = "Yes")
@@ -45,7 +46,7 @@ END AS tenure_group
 
 **Average Monthly Charges** = AVERAGE(telcodata_cleaned[MonthlyCharges])
 
-**Total Monthly Revenue** = SUM(telcodata_cleaned[MonthlyCharges])
+**Total Monthly Revenue** = SUM(telcodata_cleaned[MonthlyCharges]) '''
 
 
 ## Key Dashboard Visuals:
